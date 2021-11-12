@@ -157,7 +157,6 @@ music.addEventListener("ended", () => {
   switch (getText) {
     case "repeat":
       nextSong();
-      playingSong();
       break;
 
     case "repeat_one":
@@ -175,7 +174,6 @@ music.addEventListener("ended", () => {
       songIndex = randIndex;
       loadSong(songs[songIndex]);
       playMusic();
-      playingSong();
       break;
   }
 });
@@ -195,70 +193,4 @@ closemoreMusic.addEventListener("click", () => {
   moreMusicBtn.click();
 });
 
-// for (let i = 0; i < songs.length; i++) {
-//     let liTag = `<li li-index="${i + 1}">
-//     <div class="row">
-//       <span>${songs[i].title}</span>
-//       <p>${songs[i].artist}</p>
-//       </div>
-//       <audio class="${songs[i].name} " src="../../audio/${songs[i].name}.mp3></audio>
-//       <span id="${songs[i].name}" class="audio-duration">1:45</span>
-//       </li>`;}
 
-//   ulTag.insertAdjacentHTML("beforeend", liTag);
-
-//   let liAudioDurationTag = ulTag.querySelector(`#${songs[i].name}`);
-//   let liAudioTag = ulTag.querySelector(`.${songs[i].name}`);
-
-//   liAudioTag.addEventListener("loadeddata", () => {
-
-//     let min_duretion= Math.floor(music.duration/60);
-//         let sec_duretion=Math.floor(music.duration%60);
-//         if (sec_duretion < 10) {
-//         sec_duretion = `0${sec_duretion}`;
-//     }
-
-//     liAudioDurationTag.innerText = `${min_duretion}:${sec_duretion}`;
-
-//     liAudioDurationTag.setAttribute("t-duration", `${min_duretion}:${sec_duretion}`);
-//   });
-
-// }
-
-// // play particular song from the list on click of li tag
-
-// let allLiTags = ulTag.querySelectorAll("li");
-// function playingSong() {
-//     for (let j = 0; j < allLiTags.length; j++) {
-//    let audioTag = allLiTags[j].querySelector(".audio-duration");
-//         // let remove playing class from all other li expect the last one which is clicked
-//         if(allLiTags[j].classList.contains("playing")){
-//             allLiTags[j].classList.remove("playing");
-//         //  let's get that audio duration value and pass to .audio-duration innertext
-//         let adDuration = audioTag.getAttribute("t-duration");
-//         audioTag.innerText = adDuration;
-//         }
-
-//         // if there is an li tag which li index is equal to songIndex
-//         // then this music is playing now and we'll style it
-
-//         if(allLiTags[j].getAttribute("li-index") == songIndex){
-//             allLiTags[j].classList.add("playing");
-//             audioTag.innerText = "Playing";
-//         }
-
-//         // adding on click attribute in all li tags
-//         allLiTags[j].setAttribute("onclick", "clicked(this)");
-//     }
-// }
-
-// // lets play song on click li
-// function clicked(element){
-
-//     // getting li index of particular clicked li tag
-//     let getLiIndex = element.getAttribute("li-index");
-//     songIndex =  getLiIndex; //passing that liindex to songIndex
-//     loadMusic(songIndex);
-//     playMusic();
-
-// }
